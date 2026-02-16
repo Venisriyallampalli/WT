@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Online Bookstore</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Navigation Frame (Top) -->
+        <nav class="top-nav-frame" id="nav-frame">
+            <div class="nav-content">
+                <div class="brand">
+                    <i class="fa-solid fa-book-open"></i>
+                    <h1>CozyReads</h1>
+                </div>
+
+                <ul class="nav-links" id="main-nav">
+                    <li onclick="navigateTo('home')">Home</li>
+                    <li onclick="navigateTo('category', 'Fiction')">Fiction</li>
+                    <li onclick="navigateTo('category', 'Science')">Science</li>
+                    <li onclick="navigateTo('category', 'Technology')">Technology</li>
+                </ul>
+
+                <ul class="auth-links" id="auth-nav">
+                    <!-- Dynamic Auth Links -->
+                    <li id="nav-signup" onclick="navigateTo('registration')">Signup</li>
+                    <li id="nav-signin" onclick="navigateTo('login')">Signin</li>
+                </ul>
+
+                <div class="cart-icon" id="nav-cart" onclick="toggleCart()" style="display: none;">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="cart-count">0</span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content Wrapper -->
+        <div class="main-wrapper">
+            <!-- Content Frame -->
+            <main class="Frame-content" id="content-frame">
+                <!-- Dynamic content loads here -->
+            </main>
+
+            <!-- Footer Frame -->
+            <footer class="Frame-footer" id="footer-frame">
+                <div class="footer-content">
+                    <p>&copy; 2026 Online Bookstore. All rights reserved.</p>
+                    <div class="socials">
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Cart Modal/Overlay -->
+    <div class="cart-overlay" id="cart-overlay">
+        <div class="cart-sidebar">
+            <div class="cart-header">
+                <h2>Your Cart</h2>
+                <button onclick="toggleCart()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="cart-items" id="cart-items">
+                <!-- Cart items go here -->
+                <div class="empty-cart-msg">Your cart is empty.</div>
+            </div>
+            <div class="cart-footer">
+                <div class="total-row">
+                    <span>Total:</span>
+                    <span id="cart-total">$0.00</span>
+                </div>
+                <button class="checkout-btn">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
